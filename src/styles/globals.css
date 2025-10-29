@@ -1,0 +1,2842 @@
+/* src/styles/globals.css */
+@import "tailwindcss";
+/* (your existing imports/vars/rules below) */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@custom-variant dark (&:is(.dark *));
+@custom-variant light (&:is(.light *));
+
+:root {
+  --font-size: 14px;
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #030213;
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: #030213;
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+  
+  /* ISSAC GONZALEZ Brand Colors - Orange Theme */
+  --aurelius-gold: #F89A1C;
+  --aurelius-gold-light: #FBB454;
+  --aurelius-gold-dark: #E8830C;
+  --aurelius-amber: #F59E0B;
+  --aurelius-orange: #EA580C;
+  
+  /* Logo Colors - Enhanced Animation System */
+  --logo-gold: #F89A1C;
+  --logo-amber: #F59E0B;
+  --logo-gold-light: #FBB454;
+  --logo-gold-dark: #E8830C;
+  --logo-orange: #EA580C;
+  
+  /* NEW PALETTE - Custom Colors */
+  --venetian-lace: #F7EDDA;
+  --macadamia-beige: #F7DFBA;
+  --fence-green: #09332C;
+  --norfolk-green: #2E4B3C;
+  --fiery-glow: #F0531C;
+  --pumpkin-vapor: #FFA74F;
+  
+  /* App Container Background - Dark Mode Default */
+  --app-container-bg: #000000;
+  
+  /* Star Burst Theme Colors - Default (Dark Mode) */
+  --star-burst-center-1: rgba(255, 255, 255, 0.8);
+  --star-burst-center-2: rgba(255, 255, 255, 0.6);
+  --star-burst-center-3: rgba(107, 114, 128, 0.4);
+  --star-burst-center-4: rgba(75, 85, 99, 0.2);
+  --star-burst-ring-1: rgba(255, 255, 255, 0.6);
+  --star-burst-ring-2: rgba(255, 255, 255, 0.5);
+  --star-burst-ring-3: rgba(107, 114, 128, 0.4);
+  --star-burst-ring-4: rgba(107, 114, 128, 0.3);
+  --star-burst-sparkle-1: rgba(255, 255, 255, 0.9);
+  --star-burst-sparkle-2: rgba(255, 255, 255, 0.6);
+  --star-burst-sparkle-3: rgba(107, 114, 128, 0.3);
+  --star-burst-filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8));
+  
+  /* Inter Font Family */
+  --font-inter: 'Inter', sans-serif;
+  --font-primary: 'Inter', sans-serif;
+  
+  /* Hero Text Glow Color */
+  --hero-text-glow: #f2b43b;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+  
+  /* App Container Background - Dark Mode (Pure Black) */
+  --app-container-bg: #000000;
+}
+
+.light {
+  /* NEW PALETTE IMPLEMENTATION */
+  --background: #f2b43b;          /* Yellow */
+  --foreground: #000000;          /* Black */
+  --card: #f2b43b;               /* Yellow */
+  --card-foreground: #000000;     /* Black */
+  --popover: #f2b43b;            /* Yellow */
+  --popover-foreground: #000000;  /* Black */
+  --primary: #000000;            /* Black */
+  --primary-foreground: #f2b43b;  /* Yellow */
+  --secondary: #f2b43b;          /* Yellow */
+  --secondary-foreground: #000000; /* Black */
+  --muted: #f2b43b;              /* Yellow */
+  --muted-foreground: #000000;    /* Black */
+  --accent: #f2b43b;             /* Yellow */
+  --accent-foreground: #000000;   /* Black */
+  --destructive: #000000;        /* Black */
+  --destructive-foreground: #f2b43b; /* Yellow */
+  --border: rgba(0, 0, 0, 0.2);  /* Light Black border */
+  --input: #f2b43b;              /* Yellow */
+  --ring: #000000;               /* Black */
+  --chart-1: #000000;            /* Black */
+  --chart-2: #f2b43b;            /* Yellow */
+  --chart-3: #000000;            /* Black */
+  --chart-4: #f2b43b;            /* Yellow */
+  --chart-5: #000000;            /* Black */
+  --sidebar: #f2b43b;            /* Yellow */
+  --sidebar-foreground: #000000;  /* Black */
+  --sidebar-primary: #000000;     /* Black */
+  --sidebar-primary-foreground: #f2b43b; /* Yellow */
+  --sidebar-accent: #f2b43b;      /* Yellow */
+  --sidebar-accent-foreground: #000000; /* Black */
+  --sidebar-border: rgba(0, 0, 0, 0.2);      /* Light Black border */
+  --sidebar-ring: #000000;        /* Black */
+  
+  /* App Container Background - Light Mode (Yellow) */
+  --app-container-bg: #f2b43b;    /* Yellow */
+  
+  /* Brand Color Overrides for Light Mode */
+  --aurelius-gold: #F0531C;       /* Fiery Glow */
+  --aurelius-gold-light: #FFA74F; /* Pumpkin Vapor */
+  --aurelius-gold-dark: #09332C;  /* Fence Green */
+  --aurelius-amber: #FFA74F;      /* Pumpkin Vapor */
+  --aurelius-orange: #F0531C;     /* Fiery Glow */
+  
+  /* Star Burst Theme Colors - Keep Dark Mode for Dynamic Convergences */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Brand Colors */
+  --color-aurelius-gold: var(--aurelius-gold);
+  --color-aurelius-gold-light: var(--aurelius-gold-light);
+  --color-aurelius-gold-dark: var(--aurelius-gold-dark);
+  --color-aurelius-amber: var(--aurelius-amber);
+  --color-aurelius-orange: var(--aurelius-orange);
+  
+  /* Logo Colors */
+  --color-logo-gold: var(--logo-gold);
+  --color-logo-amber: var(--logo-amber);
+  --color-logo-gold-light: var(--logo-gold-light);
+  --color-logo-gold-dark: var(--logo-gold-dark);
+  --color-logo-orange: var(--logo-orange);
+  
+  /* New Palette Colors */
+  --color-venetian-lace: var(--venetian-lace);
+  --color-macadamia-beige: var(--macadamia-beige);
+  --color-fence-green: var(--fence-green);
+  --color-norfolk-green: var(--norfolk-green);
+  --color-fiery-glow: var(--fiery-glow);
+  --color-pumpkin-vapor: var(--pumpkin-vapor);
+  
+  /* App Container Background */
+  --color-app-container-bg: var(--app-container-bg);
+  
+  /* Hero Text Glow */
+  --color-hero-text-glow: var(--hero-text-glow);
+  
+  /* Font Integration */
+  --font-family-inter: var(--font-inter);
+  --font-family-primary: var(--font-primary);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-primary);
+    overflow-x: hidden;
+    max-width: 100vw;
+    /* Performance optimizations */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+  }
+
+  /* Interactive Element Cursors */
+  button, a, input[type="button"], input[type="submit"], input[type="reset"], 
+  input[type="checkbox"], input[type="radio"], input[type="file"], 
+  input[type="range"], select, [role="button"], [role="link"], 
+  [role="tab"], [role="option"], [role="menuitem"], [onclick], 
+  [tabindex]:not([tabindex="-1"]), .cursor-pointer, .clickable,
+  .logo, .brand, .project-card, .nav-item, .menu-item,
+  footer .relative {
+    cursor: pointer !important;
+  }
+  
+  /* Text Input Cursors */
+  input[type="text"], input[type="email"], input[type="password"], 
+  input[type="search"], textarea {
+    cursor: text !important;
+  }
+  
+  /* Disabled Element Cursors */
+  button:disabled, input:disabled, select:disabled, [disabled], 
+  [aria-disabled="true"] {
+    cursor: not-allowed !important;
+  }
+  
+  /* Breadcrumb Current Page - Default Cursor (Not Disabled) */
+  [data-slot="breadcrumb-page"],
+  [aria-current="page"] {
+    cursor: default !important;
+  }
+}
+
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1, h2, h3, h4, p, label, button, input {
+      font-family: var(--font-primary);
+      line-height: 1.5;
+    }
+    
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+    }
+    
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+    }
+    
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+    }
+    
+    h4, label, button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+    }
+    
+    p, input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+  font-family: var(--font-primary);
+  overflow-x: hidden;
+  max-width: 100vw;
+  /* Performance optimizations */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
+  /* Hardware acceleration for smoother performance */
+  backface-visibility: hidden;
+}
+
+@layer utilities {
+  /* Custom Z-Index Values - Fixed Navigation Layering */
+  .z-1 { z-index: 1; }
+  .z-2 { z-index: 2; }
+  .z-3 { z-index: 3; }
+  .z-4 { z-index: 4; }
+  .z-5 { z-index: 5; }
+  .z-6 { z-index: 6; }
+  .z-7 { z-index: 7; }
+  .z-8 { z-index: 8; }
+  .z-15 { z-index: 15; }
+  .z-25 { z-index: 25; }
+  .z-35 { z-index: 35; }
+  .z-45 { z-index: 45; }
+  .z-55 { z-index: 55; }
+  .z-60 { z-index: 60; }
+  .z-65 { z-index: 65; }
+  .z-70 { z-index: 70; }
+  .z-75 { z-index: 75; }
+  .z-\\[9999\\] { z-index: 9999; }
+  .z-\\[99999\\] { z-index: 99999; }
+  
+  /* Project Hero Content Positioning Utilities */
+  .hero-content-at-45 {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 45%;
+  }
+  
+  /* Responsive hero content positioning */
+  @media (max-width: 768px) {
+    .hero-content-at-45 {
+      padding-top: 35%;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .hero-content-at-45 {
+      padding-top: 45%;
+    }
+  }
+  
+  /* Project Hero Content - Positioned at 42% from top in 85vh Container */
+  .project-hero-content {
+    top: 42% !important;
+  }
+  
+  /* App Container Background Class */
+  .bg-app-container {
+    background-color: var(--app-container-bg) !important;
+  }
+  
+  /* Layout Utilities */
+.section-container {
+  max-width: 80rem;        /* max-w-7xl */
+  margin-left: auto;       /* mx-auto */
+  margin-right: auto;
+  padding-left: 1.5rem;    /* px-6 */
+  padding-right: 1.5rem;
+}
+@media (min-width: 640px) { /* sm */
+  .section-container {
+    padding-left: 2rem;    /* px-8 */
+    padding-right: 2rem;
+  }
+}
+@media (min-width: 1024px) { /* lg */
+  .section-container {
+    padding-left: 2rem;    /* px-8 */
+    padding-right: 2rem;
+  }
+}
+
+
+  /**/
+.mobile-safe-margin {
+  /* was: @apply mx-6 my-4; */
+  margin-left: 1.5rem;  /* mx-6 */
+  margin-right: 1.5rem; /* mx-6 */
+  margin-top: 1rem;     /* my-4 */
+  margin-bottom: 1rem;  /* my-4 */
+}
+
+@media (width >= 640px) { /* sm */
+  .mobile-safe-margin {
+    margin-left: 2rem;   /* sm:mx-8 */
+    margin-right: 2rem;  /* sm:mx-8 */
+    margin-top: 1.5rem;  /* sm:my-6 */
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (width >= 1024px) { /* lg */
+  .mobile-safe-margin {
+    margin-left: 3rem;   /* lg:mx-12 */
+    margin-right: 3rem;  /* lg:mx-12 */
+    margin-top: 2rem;    /* lg:my-8 */
+    margin-bottom: 2rem;
+  }
+}
+/**/
+
+  .section-transition {
+    @apply transition-all duration-700 ease-in-out;
+  }
+  
+  /* Mobile Viewport Control - Prevent Horizontal Overflow */
+  .mobile-viewport-lock {
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+  }
+  
+  /* Prevent animations from causing horizontal scroll on mobile */
+  @media (max-width: 768px) {
+    section, main, div[class*="container"] {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+    
+    /* Constrain motion animations to viewport */
+    [class*="motion-"] {
+      max-width: 100vw;
+    }
+  }
+  
+  /* ===== NAVIGATION SCROLL OFFSET FIX ===== */
+  
+  /* Fixed Header Height Compensation - Proper scroll margin for section navigation */
+  #hero,
+  #about,
+  #portfolio,
+  #resume,
+  #contact,
+  #dynamic-convergences {
+    scroll-margin-top: 100px; /* Account for fixed header height + buffer */
+  }
+  
+  /* Mobile Navigation Scroll Offset - Smaller header on mobile */
+  @media (max-width: 768px) {
+    #hero,
+    #about,
+    #portfolio,
+    #resume,
+    #contact,
+    #dynamic-convergences {
+      scroll-margin-top: 80px; /* Smaller offset for mobile header */
+    }
+  }
+  
+  /* Large Desktop Navigation Scroll Offset - Extra buffer for larger screens */
+  @media (min-width: 1024px) {
+    #hero,
+    #about,
+    #portfolio,
+    #resume,
+    #contact,
+    #dynamic-convergences {
+      scroll-margin-top: 120px; /* Extra buffer for desktop */
+    }
+  }
+  
+  /* Section Title Offset - Ensure section titles have proper spacing from fixed header */
+  .section-title-offset {
+    padding-top: 100px;
+    margin-top: -100px;
+  }
+  
+  /* Mobile Section Title Offset */
+  @media (max-width: 768px) {
+    .section-title-offset {
+      padding-top: 80px;
+      margin-top: -80px;
+    }
+  }
+  
+  /* Desktop Section Title Offset */
+  @media (min-width: 1024px) {
+    .section-title-offset {
+      padding-top: 120px;
+      margin-top: -120px;
+    }
+  }
+  
+  /* Alternative scroll-padding approach for smooth scrolling containers */
+  html {
+    scroll-padding-top: 100px;
+  }
+  
+  @media (max-width: 768px) {
+    html {
+      scroll-padding-top: 80px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    html {
+      scroll-padding-top: 120px;
+    }
+  }
+  
+  /* Text Selection */
+  ::selection {
+    background-color: var(--aurelius-gold);
+    color: #ffffff;
+  }
+  
+  .light ::selection {
+    background-color: var(--fiery-glow);
+    color: #ffffff;
+  }
+  
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-black;
+  }
+  
+  .light ::-webkit-scrollbar-track {
+    background-color: var(--venetian-lace);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--aurelius-gold);
+    border-radius: 9999px;
+  }
+  
+  .light ::-webkit-scrollbar-thumb {
+    background-color: var(--fiery-glow);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--aurelius-gold-light);
+  }
+  
+  .light ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--pumpkin-vapor);
+  }
+  
+  /* Focus Outlines */
+  .focus-visible:focus-visible {
+    outline: 2px solid var(--aurelius-gold);
+    outline-offset: 2px;
+  }
+  
+  .light .focus-visible:focus-visible {
+    outline: 2px solid var(--fiery-glow);
+    outline-offset: 2px;
+  }
+  
+  /* Font Utilities */
+  .font-inter, .font-primary {
+    font-family: var(--font-inter) !important;
+  }
+  
+  /* New Palette Color Utilities */
+  .bg-venetian-lace { background-color: var(--venetian-lace); }
+  .bg-macadamia-beige { background-color: var(--macadamia-beige); }
+  .bg-fence-green { background-color: var(--fence-green); }
+  .bg-norfolk-green { background-color: var(--norfolk-green); }
+  .bg-fiery-glow { background-color: var(--fiery-glow); }
+  .bg-pumpkin-vapor { background-color: var(--pumpkin-vapor); }
+  
+  .text-venetian-lace { color: var(--venetian-lace); }
+  .text-macadamia-beige { color: var(--macadamia-beige); }
+  .text-fence-green { color: var(--fence-green); }
+  .text-norfolk-green { color: var(--norfolk-green); }
+  .text-fiery-glow { color: var(--fiery-glow); }
+  .text-pumpkin-vapor { color: var(--pumpkin-vapor); }
+  
+  .border-venetian-lace { border-color: var(--venetian-lace); }
+  .border-macadamia-beige { border-color: var(--macadamia-beige); }
+  .border-fence-green { border-color: var(--fence-green); }
+  .border-norfolk-green { border-color: var(--norfolk-green); }
+  .border-fiery-glow { border-color: var(--fiery-glow); }
+  .border-pumpkin-vapor { border-color: var(--pumpkin-vapor); }
+}
+
+/* Brand Animations */
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.05; }
+  50% { opacity: 0.15; }
+}
+
+@keyframes logoTransitionToHeader {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-35vw, -40vh) scale(0.3);
+    opacity: 0.8;
+  }
+}
+
+@keyframes goldenShimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100px) scale(0);
+    opacity: 0;
+  }
+  50% { opacity: 1; }
+  100% {
+    transform: translateY(-100px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateY(-20px) rotate(90deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-10px) rotate(180deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-30px) rotate(270deg);
+    opacity: 0.6;
+  }
+}
+
+@keyframes loadingPulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes skeletonShimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+@keyframes lazyFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes loadingOrbit {
+  from { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+}
+
+/* Clock Swinging Animation */
+@keyframes clockSwing {
+  0% { transform: rotate(-8deg); }
+  50% { transform: rotate(8deg); }
+  100% { transform: rotate(-8deg); }
+}
+
+@keyframes clockSwingHover {
+  0% { transform: rotate(-15deg); }
+  50% { transform: rotate(15deg); }
+  100% { transform: rotate(-15deg); }
+}
+
+/* Footer-Style Logo Animations - Dark Mode */
+@keyframes footerStyleGlowOuter {
+  0%, 100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(3.3);
+    opacity: 0.5;
+  }
+}
+
+@keyframes footerStyleGlowInner {
+  0%, 100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(2.5);
+    opacity: 0.7;
+  }
+}
+
+@keyframes footerStyleLogoGlow {
+  0% {
+    filter: drop-shadow(0 0 3px rgba(248, 154, 28, 0.2));
+  }
+  33% {
+    filter: drop-shadow(0 0 10px rgba(248, 154, 28, 0.5)) drop-shadow(0 0 16px rgba(245, 158, 11, 0.3));
+  }
+  66% {
+    filter: drop-shadow(0 0 6px rgba(248, 154, 28, 0.4)) drop-shadow(0 0 12px rgba(245, 158, 11, 0.2));
+  }
+  100% {
+    filter: drop-shadow(0 0 3px rgba(248, 154, 28, 0.2));
+  }
+}
+
+@keyframes footerStyleSparkleOrbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes footerStylePulseRing {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(2.8);
+    opacity: 0.2;
+  }
+}
+
+@keyframes footerStyleLogoRotate {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-3deg) scale(1.02);
+  }
+  75% {
+    transform: rotate(3deg) scale(1.02);
+  }
+}
+
+/* Footer-Style Logo Animations - Light Mode */
+@keyframes lightFooterStyleGlowOuter {
+  0%, 100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(3.3);
+    opacity: 0.4;
+  }
+}
+
+@keyframes lightFooterStyleGlowInner {
+  0%, 100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(2.5);
+    opacity: 0.6;
+  }
+}
+
+@keyframes lightFooterStyleLogoGlow {
+  0% {
+    filter: drop-shadow(0 0 3px rgba(240, 83, 28, 0.3));
+  }
+  33% {
+    filter: drop-shadow(0 0 10px rgba(240, 83, 28, 0.5)) drop-shadow(0 0 16px rgba(255, 167, 79, 0.4));
+  }
+  66% {
+    filter: drop-shadow(0 0 6px rgba(240, 83, 28, 0.4)) drop-shadow(0 0 12px rgba(255, 167, 79, 0.3));
+  }
+  100% {
+    filter: drop-shadow(0 0 3px rgba(240, 83, 28, 0.3));
+  }
+}
+
+@keyframes lightFooterStylePulseRing {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(2.8);
+    opacity: 0.25;
+  }
+}
+
+@keyframes loadingGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px var(--aurelius-gold)) drop-shadow(0 0 10px var(--aurelius-gold-light));
+  }
+  50% {
+    filter: drop-shadow(0 0 8px var(--aurelius-gold)) drop-shadow(0 0 15px var(--aurelius-gold-light)) drop-shadow(0 0 20px var(--aurelius-amber));
+  }
+}
+
+@keyframes progressShine {
+  0% { background-position: -100% 0; }
+  100% { background-position: 100% 0; }
+}
+
+/* Enhanced Gold Gradient Animation for CONVERGENCE - Hero Style */
+@keyframes dynamicGradientFlow {
+  0% { 
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 20px rgba(248, 154, 28, 0.6)) 
+            drop-shadow(0 0 40px rgba(248, 154, 28, 0.3));
+  }
+  25% { 
+    background-position: 50% 25%;
+    filter: drop-shadow(0 0 25px rgba(251, 180, 84, 0.7)) 
+            drop-shadow(0 0 50px rgba(255, 207, 112, 0.4));
+  }
+  50% { 
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 22px rgba(255, 207, 112, 0.8)) 
+            drop-shadow(0 0 45px rgba(251, 180, 84, 0.5));
+  }
+  75% { 
+    background-position: 50% 75%;
+    filter: drop-shadow(0 0 28px rgba(232, 131, 12, 0.7)) 
+            drop-shadow(0 0 55px rgba(248, 154, 28, 0.4));
+  }
+  100% { 
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 20px rgba(248, 154, 28, 0.6)) 
+            drop-shadow(0 0 40px rgba(248, 154, 28, 0.3));
+  }
+}
+
+/* Enhanced White Gradient Animation for DYNAMIC - Hero Style */
+@keyframes convergenceGradientFlow {
+  0% { 
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5)) 
+            drop-shadow(0 0 30px rgba(255, 255, 255, 0.3));
+  }
+  25% { 
+    background-position: 75% 75%;
+    filter: drop-shadow(0 0 20px rgba(248, 250, 252, 0.6)) 
+            drop-shadow(0 0 40px rgba(255, 255, 255, 0.4));
+  }
+  50% { 
+    background-position: 25% 25%;
+    filter: drop-shadow(0 0 18px rgba(241, 245, 249, 0.7)) 
+            drop-shadow(0 0 35px rgba(255, 255, 255, 0.5));
+  }
+  75% { 
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 22px rgba(255, 255, 255, 0.8)) 
+            drop-shadow(0 0 45px rgba(248, 250, 252, 0.6));
+  }
+  100% { 
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5)) 
+            drop-shadow(0 0 30px rgba(255, 255, 255, 0.3));
+  }
+}
+
+/* Enhanced Light Mode Gradient Animations - Hero Style */
+/* Light Mode: Enhanced Fiery Glow Gradient for CONVERGENCE */
+@keyframes lightDynamicGradientFlow {
+  0% { 
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 20px rgba(240, 83, 28, 0.7)) 
+            drop-shadow(0 0 40px rgba(240, 83, 28, 0.4));
+  }
+  25% { 
+    background-position: 50% 25%;
+    filter: drop-shadow(0 0 25px rgba(255, 167, 79, 0.8)) 
+            drop-shadow(0 0 50px rgba(255, 138, 61, 0.5));
+  }
+  50% { 
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 22px rgba(255, 138, 61, 0.9)) 
+            drop-shadow(0 0 45px rgba(255, 167, 79, 0.6));
+  }
+  75% { 
+    background-position: 50% 75%;
+    filter: drop-shadow(0 0 28px rgba(232, 67, 12, 0.8)) 
+            drop-shadow(0 0 55px rgba(240, 83, 28, 0.5));
+  }
+  100% { 
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 20px rgba(240, 83, 28, 0.7)) 
+            drop-shadow(0 0 40px rgba(240, 83, 28, 0.4));
+  }
+}
+
+/* Light Mode: Enhanced White with Strong Shadows for DYNAMIC */
+@keyframes lightConvergenceGradientFlow {
+  0% { 
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.9)) 
+            drop-shadow(0 0 50px rgba(255, 255, 255, 0.7)) 
+            drop-shadow(0 2px 12px rgba(9, 51, 44, 0.8)) 
+            drop-shadow(0 4px 24px rgba(9, 51, 44, 0.6));
+  }
+  25% { 
+    background-position: 75% 75%;
+    filter: drop-shadow(0 0 30px rgba(254, 254, 254, 0.95)) 
+            drop-shadow(0 0 55px rgba(255, 255, 255, 0.8)) 
+            drop-shadow(0 2px 16px rgba(9, 51, 44, 0.9)) 
+            drop-shadow(0 4px 32px rgba(46, 75, 60, 0.7));
+  }
+  50% { 
+    background-position: 25% 25%;
+    filter: drop-shadow(0 0 28px rgba(253, 253, 253, 0.9)) 
+            drop-shadow(0 0 52px rgba(255, 255, 255, 0.75)) 
+            drop-shadow(0 2px 14px rgba(9, 51, 44, 0.85)) 
+            drop-shadow(0 4px 28px rgba(9, 51, 44, 0.65));
+  }
+  75% { 
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 32px rgba(255, 255, 255, 1)) 
+            drop-shadow(0 0 60px rgba(254, 254, 254, 0.85)) 
+            drop-shadow(0 2px 18px rgba(9, 51, 44, 0.95)) 
+            drop-shadow(0 4px 36px rgba(46, 75, 60, 0.75));
+  }
+  100% { 
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.9)) 
+            drop-shadow(0 0 50px rgba(255, 255, 255, 0.7)) 
+            drop-shadow(0 2px 12px rgba(9, 51, 44, 0.8)) 
+            drop-shadow(0 4px 24px rgba(9, 51, 44, 0.6));
+  }
+}
+
+@keyframes loadingParticleFloat {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateY(-15px) translateX(5px) scale(1.2);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-8px) translateX(-3px) scale(1.1);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translateY(-22px) translateX(8px) scale(1.3);
+    opacity: 0.6;
+  }
+}
+
+/* Hero Text Background Glow Animations */
+@keyframes heroTextGlow {
+  0%, 100% { 
+    text-shadow: 0 0 20px rgba(242, 180, 59, 0.6), 0 0 40px rgba(242, 180, 59, 0.3), 0 0 60px rgba(242, 180, 59, 0.2);
+    filter: drop-shadow(0 0 20px rgba(242, 180, 59, 0.6)) drop-shadow(0 0 40px rgba(242, 180, 59, 0.3));
+  }
+  50% { 
+    text-shadow: 0 0 25px rgba(242, 180, 59, 0.8), 0 0 50px rgba(242, 180, 59, 0.4), 0 0 75px rgba(242, 180, 59, 0.3);
+    filter: drop-shadow(0 0 25px rgba(242, 180, 59, 0.8)) drop-shadow(0 0 50px rgba(242, 180, 59, 0.4));
+  }
+}
+
+@keyframes heroTextPulseGlow {
+  0%, 100% { 
+    text-shadow: 0 0 15px rgba(242, 180, 59, 0.5), 0 0 30px rgba(242, 180, 59, 0.3);
+    filter: drop-shadow(0 0 15px rgba(242, 180, 59, 0.5));
+  }
+  50% { 
+    text-shadow: 0 0 30px rgba(242, 180, 59, 0.8), 0 0 60px rgba(242, 180, 59, 0.5);
+    filter: drop-shadow(0 0 30px rgba(242, 180, 59, 0.8));
+  }
+}
+
+@keyframes heroSubtextGlow {
+  0%, 100% { 
+    text-shadow: 0 0 10px rgba(242, 180, 59, 0.4), 0 0 20px rgba(242, 180, 59, 0.2);
+    filter: drop-shadow(0 0 10px rgba(242, 180, 59, 0.4));
+  }
+  50% { 
+    text-shadow: 0 0 15px rgba(242, 180, 59, 0.6), 0 0 30px rgba(242, 180, 59, 0.3);
+    filter: drop-shadow(0 0 15px rgba(242, 180, 59, 0.6));
+  }
+}
+
+/* Mobile Navigation Animations */
+@keyframes mobileNavSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mobileNavFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes mobileNavGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(248, 154, 28, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(248, 154, 28, 0.6);
+  }
+}
+
+@keyframes mobileNavGlowLight {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(240, 83, 28, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(240, 83, 28, 0.6);
+  }
+}
+
+/* White Stardust Animations for Dynamic Convergences */
+@keyframes whiteStardustTwinkle {
+  0%, 100% {
+    opacity: 0.7;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 16px rgba(255, 255, 255, 0.3);
+  }
+  25% {
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.6), 0 0 45px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 24px rgba(255, 255, 255, 0.5);
+  }
+  75% {
+    opacity: 0.9;
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.9), 0 0 36px rgba(255, 255, 255, 0.6);
+  }
+}
+
+@keyframes whiteStardustFloat {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) translateX(8px) scale(1.1) rotate(90deg);
+  }
+  50% {
+    transform: translateY(-25px) translateX(-5px) scale(1.2) rotate(180deg);
+  }
+  75% {
+    transform: translateY(-10px) translateX(12px) scale(1.05) rotate(270deg);
+  }
+}
+
+@keyframes whiteStardustPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+}
+
+
+
+@layer utilities {
+  /* Animation Classes */
+  .animate-grid-pulse { animation: gridPulse 4s ease-in-out infinite; }
+  
+  /* Lazy Loading Animation Classes */
+  .animate-skeleton-shimmer {
+    background: linear-gradient(90deg, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 75%);
+    background-size: 200px 100%;
+    animation: skeletonShimmer 1.5s ease-in-out infinite;
+  }
+  
+  .light .animate-skeleton-shimmer {
+    background: linear-gradient(90deg, rgba(0,0,0,0.05) 25%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.05) 75%);
+  }
+  
+  .animate-lazy-fade-in { 
+    animation: lazyFadeIn 0.6s ease-out forwards; 
+  }
+  
+  /* Loading Skeleton Styles */
+  .skeleton-loader {
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    transform: translateZ(0); /* Force GPU acceleration */
+    will-change: transform; /* Performance hint */
+  }
+  
+  .light .skeleton-loader {
+    background: rgba(0,0,0,0.05);
+  }
+  
+  .skeleton-loader::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 25%, rgba(255,255,255,0.4) 50%, transparent 75%);
+    animation: skeletonShimmer 1.5s ease-in-out infinite;
+    transform: translateZ(0); /* Force GPU acceleration */
+  }
+  
+  .light .skeleton-loader::after {
+    background: linear-gradient(90deg, transparent 25%, rgba(0,0,0,0.1) 50%, transparent 75%);
+  }
+  
+  /* Performance optimizations for particle systems on projects pages */
+  .projects-page-optimized .fixed.inset-0.pointer-events-none,
+  .projects-page-optimized .absolute.inset-0.pointer-events-none,
+  .projects-page-optimized [class*="particle"],
+  .projects-page-optimized [data-particle] {
+    transform: translateZ(0) !important; /* Force GPU acceleration */
+    will-change: transform, opacity !important; /* Performance hints */
+    backface-visibility: hidden !important; /* Optimize 3D transforms */
+  }
+  
+  /* Reduce complexity for project cards on projects page */
+  .projects-page-optimized .project-card {
+    transform: translateZ(0); /* Force GPU acceleration */
+    will-change: transform; /* Performance hint */
+  }
+  
+  /* Optimize particle animations for projects pages */
+  .projects-page-optimized [class*="motion-div"] {
+    transform: translateZ(0); /* Force GPU acceleration */
+    contain: layout style paint; /* CSS containment for performance */
+  }
+  
+  /* Performance optimization for heavy pages - Reduce animation complexity */
+  .performance-mode * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.3s !important;
+  }
+  
+  /* GPU acceleration for all animated elements */
+  [class*="animate-"],
+  [class*="motion-"],
+  .animate-\[*\] {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  .animate-golden-shimmer {
+    background: linear-gradient(90deg, transparent 0%, var(--aurelius-gold) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: goldenShimmer 2s ease-in-out infinite;
+  }
+  
+  .light .animate-golden-shimmer {
+    background: linear-gradient(90deg, transparent 0%, var(--fiery-glow) 50%, transparent 100%);
+  }
+  
+  .animate-float-up { animation: floatUp 4s ease-in-out infinite; }
+  .animate-particle-float { animation: particleFloat 8s ease-in-out infinite; }
+  .animate-logo-transition { animation: logoTransitionToHeader 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+  .animate-loading-pulse { animation: loadingPulse 2s ease-in-out infinite; }
+  .animate-loading-orbit { animation: loadingOrbit 20s linear infinite; }
+  .animate-loading-glow { animation: loadingGlow 3s ease-in-out infinite; }
+  .animate-progress-shine { animation: progressShine 1.5s ease-in-out infinite; }
+  .animate-loading-particle-float { animation: loadingParticleFloat 8s ease-in-out infinite; }
+  
+  /* Hero Text Glow Animation Classes */
+  .animate-hero-text-glow { animation: heroTextGlow 4s ease-in-out infinite; }
+  .animate-hero-text-pulse-glow { animation: heroTextPulseGlow 3s ease-in-out infinite; }
+  .animate-hero-subtext-glow { animation: heroSubtextGlow 5s ease-in-out infinite; }
+  
+  /* Mobile Navigation Animation Classes */
+  .animate-mobile-nav-slide-in { animation: mobileNavSlideIn 0.4s ease-out; }
+  .animate-mobile-nav-fade-in { animation: mobileNavFadeIn 0.3s ease-out; }
+  .animate-mobile-nav-glow { animation: mobileNavGlow 2s ease-in-out infinite; }
+  .light .animate-mobile-nav-glow { animation: mobileNavGlowLight 2s ease-in-out infinite; }
+  
+
+  
+  /* Clock Animation Classes */
+  .animate-clock-swing { animation: clockSwing 3s ease-in-out infinite; }
+  .animate-clock-swing-hover { animation: clockSwingHover 2s ease-in-out infinite; }
+  
+  /* Simple Title Animation Classes */
+  .animate-dynamic-title-glow { animation: dynamicTitleGlow 3s ease-in-out infinite; }
+  .animate-convergence-title-glow { animation: convergenceTitleGlow 3.5s ease-in-out infinite; }
+  
+  /* Light Mode Title Animations */
+  .light .animate-dynamic-title-glow { animation: lightDynamicTitleGlow 3s ease-in-out infinite; }
+  .light .animate-convergence-title-glow { animation: lightConvergenceTitleGlow 3.5s ease-in-out infinite; }
+  
+  /* Dynamic Convergences text - Same as Dark Mode (removed light mode overrides) */
+  
+  /* Ensure Dynamic Convergences titles are ALWAYS visible with new class */
+  .dynamic-convergences-title {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    min-height: 1em !important;
+    line-height: 1.1 !important;
+    -webkit-text-fill-color: initial !important;
+    background-clip: initial !important;
+    -webkit-background-clip: initial !important;
+  }
+  
+  /* Force solid colors for maximum visibility */
+  #dynamic-convergences .dynamic-convergences-title {
+    color: inherit !important;
+  }
+  
+  /* Remove any potential interference from old gradient classes */
+  #dynamic-convergences h2:not(.dynamic-convergences-title) {
+    color: inherit !important;
+    -webkit-text-fill-color: inherit !important;
+  }
+  
+  /* Simplified Dynamic Convergence Title Styling - Always Visible */
+  
+  /* Ensure Dynamic Convergences titles are always visible */
+  #dynamic-convergences h2 {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    min-height: 1em !important;
+    line-height: 1.1 !important;
+  }
+  
+  /* Simple text glow animations for Dynamic Convergences */
+  @keyframes dynamicTitleGlow {
+    0%, 100% { 
+      text-shadow: 0 0 20px rgba(248, 154, 28, 0.6), 0 0 40px rgba(248, 154, 28, 0.3);
+      filter: drop-shadow(0 0 20px rgba(248, 154, 28, 0.6));
+    }
+    50% { 
+      text-shadow: 0 0 25px rgba(248, 154, 28, 0.8), 0 0 50px rgba(248, 154, 28, 0.4);
+      filter: drop-shadow(0 0 25px rgba(248, 154, 28, 0.8));
+    }
+  }
+  
+  @keyframes convergenceTitleGlow {
+    0%, 100% { 
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
+      filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
+    }
+    50% { 
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 40px rgba(255, 255, 255, 0.4);
+      filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.7));
+    }
+  }
+  
+  /* Light mode animations - SAME GLOW AS DARK MODE */
+  @keyframes lightDynamicTitleGlow {
+    0%, 100% { 
+      text-shadow: 0 0 20px rgba(248, 154, 28, 0.6), 0 0 40px rgba(248, 154, 28, 0.3);
+      filter: drop-shadow(0 0 20px rgba(248, 154, 28, 0.6));
+    }
+    50% { 
+      text-shadow: 0 0 25px rgba(248, 154, 28, 0.8), 0 0 50px rgba(248, 154, 28, 0.4);
+      filter: drop-shadow(0 0 25px rgba(248, 154, 28, 0.8));
+    }
+  }
+  
+  @keyframes lightConvergenceTitleGlow {
+    0%, 100% { 
+      text-shadow: none;
+      filter: none;
+    }
+    50% { 
+      text-shadow: none;
+      filter: none;
+    }
+  }
+  
+  /* Footer-Style Logo Animations - Dark Mode - HOVER ONLY */
+  .hover-animate-footer-style:hover .animate-footer-style-glow-outer { 
+    animation: footerStyleGlowOuter 2.5s ease-in-out infinite; 
+  }
+  .hover-animate-footer-style:hover .animate-footer-style-glow-inner { 
+    animation: footerStyleGlowInner 1.8s ease-in-out infinite 0.4s; 
+  }
+  .hover-animate-footer-style:hover .animate-footer-style-logo-glow { 
+    animation: footerStyleLogoGlow 1.8s ease-in-out infinite; 
+  }
+  .hover-animate-footer-style:hover .animate-footer-style-sparkle-orbit { 
+    animation: footerStyleSparkleOrbit 12s linear infinite; 
+  }
+  .hover-animate-footer-style:hover .animate-footer-style-pulse-ring { 
+    animation: footerStylePulseRing 3s ease-out infinite 1.2s; 
+  }
+  .hover-animate-footer-style:hover .animate-footer-style-logo-rotate { 
+    animation: footerStyleLogoRotate 0.5s ease-in-out; 
+  }
+  
+  /* Footer-Style Logo Animations - Light Mode - HOVER ONLY */
+  .light .hover-animate-footer-style:hover .animate-footer-style-glow-outer { 
+    animation: lightFooterStyleGlowOuter 2.5s ease-in-out infinite; 
+  }
+  .light .hover-animate-footer-style:hover .animate-footer-style-glow-inner { 
+    animation: lightFooterStyleGlowInner 1.8s ease-in-out infinite 0.4s; 
+  }
+  .light .hover-animate-footer-style:hover .animate-footer-style-logo-glow { 
+    animation: lightFooterStyleLogoGlow 1.8s ease-in-out infinite; 
+  }
+  .light .hover-animate-footer-style:hover .animate-footer-style-pulse-ring { 
+    animation: lightFooterStylePulseRing 3s ease-out infinite 1.2s; 
+  }
+  
+  /* Loading Screen Logo Animations - ALWAYS ACTIVE */
+  .loading-screen .animate-footer-style-glow-outer { 
+    animation: footerStyleGlowOuter 2.5s ease-in-out infinite !important; 
+  }
+  .loading-screen .animate-footer-style-glow-inner { 
+    animation: footerStyleGlowInner 1.8s ease-in-out infinite 0.4s !important; 
+  }
+  .loading-screen .animate-footer-style-logo-glow { 
+    animation: footerStyleLogoGlow 1.8s ease-in-out infinite !important; 
+  }
+  .loading-screen .animate-footer-style-sparkle-orbit { 
+    animation: footerStyleSparkleOrbit 12s linear infinite !important; 
+  }
+  .loading-screen .animate-footer-style-pulse-ring { 
+    animation: footerStylePulseRing 3s ease-out infinite 1.2s !important; 
+  }
+  .loading-screen .animate-footer-style-logo-rotate { 
+    animation: footerStyleLogoRotate 0.5s ease-in-out !important; 
+  }
+  
+  /* Loading Screen Light Mode Logo Animations - ALWAYS ACTIVE */
+  .light .loading-screen .animate-footer-style-glow-outer { 
+    animation: lightFooterStyleGlowOuter 2.5s ease-in-out infinite !important; 
+  }
+  .light .loading-screen .animate-footer-style-glow-inner { 
+    animation: lightFooterStyleGlowInner 1.8s ease-in-out infinite 0.4s !important; 
+  }
+  .light .loading-screen .animate-footer-style-logo-glow { 
+    animation: lightFooterStyleLogoGlow 1.8s ease-in-out infinite !important; 
+  }
+  .light .loading-screen .animate-footer-style-pulse-ring { 
+    animation: lightFooterStylePulseRing 3s ease-out infinite 1.2s !important; 
+  }
+  
+  /* Remove default animation classes - they now only work on hover or in loading screen */
+  .animate-footer-style-glow-outer:not(.loading-screen *):not(.hover-animate-footer-style:hover *) { 
+    animation: none; 
+  }
+  .animate-footer-style-glow-inner:not(.loading-screen *):not(.hover-animate-footer-style:hover *) { 
+    animation: none; 
+  }
+  .animate-footer-style-logo-glow:not(.loading-screen *):not(.hover-animate-footer-style:hover *) { 
+    animation: none; 
+  }
+  .animate-footer-style-sparkle-orbit:not(.loading-screen *):not(.hover-animate-footer-style:hover *) { 
+    animation: none; 
+  }
+  .animate-footer-style-pulse-ring:not(.loading-screen *):not(.hover-animate-footer-style:hover *) { 
+    animation: none; 
+  }
+  .animate-footer-style-logo-rotate:not(.loading-screen *):not(.hover-animate-footer-style:hover *) { 
+    animation: none; 
+  }
+}
+
+@layer utilities {
+  /* Brand Utility Classes */
+  .text-aurelius-gold { color: var(--aurelius-gold); }
+  .text-aurelius-gold-light { color: var(--aurelius-gold-light); }
+  .text-aurelius-gold-dark { color: var(--aurelius-gold-dark); }
+  .bg-aurelius-gold { background-color: var(--aurelius-gold); }
+  .bg-aurelius-gold-light { background-color: var(--aurelius-gold-light); }
+  .bg-aurelius-gold-dark { background-color: var(--aurelius-gold-dark); }
+  .border-aurelius-gold { border-color: var(--aurelius-gold); }
+  .shadow-aurelius-gold { box-shadow: 0 0 20px rgba(248, 154, 28, 0.5); }
+  .glow-aurelius-gold { filter: drop-shadow(0 0 10px var(--aurelius-gold)); }
+  .glow-aurelius-gold-intense { filter: drop-shadow(0 0 20px var(--aurelius-gold)) drop-shadow(0 0 40px var(--aurelius-gold)); }
+  
+  /* Hero Text Glow Utilities */
+  .hero-text-glow { 
+    text-shadow: 0 0 20px rgba(242, 180, 59, 0.6), 0 0 40px rgba(242, 180, 59, 0.3), 0 0 60px rgba(242, 180, 59, 0.2);
+    filter: drop-shadow(0 0 20px rgba(242, 180, 59, 0.6)) drop-shadow(0 0 40px rgba(242, 180, 59, 0.3));
+  }
+  .hero-text-glow-light { 
+    text-shadow: 0 0 15px rgba(242, 180, 59, 0.5), 0 0 30px rgba(242, 180, 59, 0.3);
+    filter: drop-shadow(0 0 15px rgba(242, 180, 59, 0.5));
+  }
+  .hero-text-glow-intense { 
+    text-shadow: 0 0 30px rgba(242, 180, 59, 0.8), 0 0 60px rgba(242, 180, 59, 0.5), 0 0 90px rgba(242, 180, 59, 0.3);
+    filter: drop-shadow(0 0 30px rgba(242, 180, 59, 0.8)) drop-shadow(0 0 60px rgba(242, 180, 59, 0.5));
+  }
+  
+  /* Clean Light Mode Brand Overrides - No !important */
+  
+  /* Logo Preservation Classes - Now Dynamic */
+  .text-logo-gold { color: var(--logo-gold) !important; }
+  .text-logo-amber { color: var(--logo-amber) !important; }
+  .bg-logo-gold { background-color: var(--logo-gold) !important; }
+  .bg-logo-amber { background-color: var(--logo-amber) !important; }
+  .border-logo-gold { border-color: var(--logo-gold) !important; }
+  .shadow-logo-gold { box-shadow: 0 0 12px rgba(248, 154, 28, 0.4) !important; }
+  .glow-logo-gold { filter: drop-shadow(0 0 5px var(--logo-gold)) !important; }
+  .glow-logo-gold-amber { filter: drop-shadow(0 0 4px var(--logo-gold)) drop-shadow(0 0 6px var(--logo-amber)) !important; }
+  
+  /* Glow Backgrounds */
+  .footer-glow-outer {
+    background: radial-gradient(circle, rgba(248, 154, 28, 0.3) 0%, rgba(245, 158, 11, 0.2) 40%, transparent 70%) !important;
+    filter: blur(6px) !important;
+  }
+  
+  .footer-glow-inner {
+    background: radial-gradient(circle, rgba(248, 154, 28, 0.5) 0%, rgba(245, 158, 11, 0.3) 30%, transparent 60%) !important;
+    filter: blur(3px) !important;
+  }
+  
+  .light-footer-glow-outer {
+    background: radial-gradient(circle, rgba(240, 83, 28, 0.25) 0%, rgba(255, 167, 79, 0.15) 40%, transparent 70%) !important;
+    filter: blur(6px) !important;
+  }
+  
+  .light-footer-glow-inner {
+    background: radial-gradient(circle, rgba(240, 83, 28, 0.4) 0%, rgba(255, 167, 79, 0.25) 30%, transparent 60%) !important;
+    filter: blur(3px) !important;
+  }
+}
+
+/* Accessibility Support */
+@layer utilities {
+  /* Mobile - Hide ALL particle systems including Dynamic Convergences */
+  @media (max-width: 768px) {
+    .fixed.inset-0.pointer-events-none,
+    .absolute.inset-0.pointer-events-none,
+    [class*="particle"],
+    [data-particle],
+    [class*="GlobalParticle"],
+    [data-particle-system],
+    .particle-system,
+    canvas[class*="particle"],
+    canvas[id*="particle"],
+    .global-particle-system {
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      z-index: -1 !important;
+    }
+  }
+
+  /* Contact Section - Hide all particle systems */
+  #contact .fixed.inset-0.pointer-events-none,
+  #contact .absolute.inset-0.pointer-events-none,
+  #contact [class*="particle"],
+  #contact [data-particle],
+  #contact [class*="GlobalParticle"],
+  #contact [data-particle-system],
+  #contact .particle-system,
+  #contact canvas[class*="particle"],
+  #contact canvas[id*="particle"] {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    z-index: -1 !important;
+  }
+
+  /* Dynamic Convergences Section - Hide global particle systems but allow SectionParticleOverlay */
+  #dynamic-convergences .fixed.inset-0.pointer-events-none,
+  #dynamic-convergences [class*="GlobalParticle"],
+  #dynamic-convergences [data-particle-system],
+  #dynamic-convergences canvas[class*="particle"],
+  #dynamic-convergences canvas[id*="particle"],
+  #dynamic-convergences .global-particle-system,
+  #dynamic-convergences div[style*="background: radial-gradient"][style*="rgba"]:not([style*="255, 255, 255"]),
+  #dynamic-convergences div[class*="animate-particle"],
+  #dynamic-convergences div[class*="particle-float"] {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    z-index: -1 !important;
+  }
+
+  /* Accessibility Menu Fixed Sizing */
+  .absolute.top-full.right-0.mt-2.w-72,
+  .absolute.top-full.right-0.mt-2.w-72 * {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+  }
+  
+  .absolute.top-full.right-0.mt-2.w-72 {
+    width: 288px !important;
+    min-width: 288px !important;
+    max-width: 288px !important;
+  }
+
+  /* Logo Fixed Sizing - Prevent accessibility font size changes from affecting logos */
+  /* This ensures all logos maintain their original size regardless of font-size changes */
+  .logo-fixed-size,
+  .logo-fixed-size *,
+  #bull-logo,
+  #bull-logo *,
+  svg#bull-logo,
+  svg#bull-logo *,
+  svg#bull-logo path,
+  [class*="logo"] svg,
+  [class*="Logo"] svg,
+  [class*="bull"] svg,
+  [class*="Bull"] svg {
+    /* Force font-size to 14px to prevent CSS variable scaling */
+    font-size: 14px !important;
+    /* Prevent em/rem based sizing from affecting SVG paths */
+    stroke-width: initial !important;
+  }
+  
+  /* Lock SVG container sizing - no scaling with font size */
+  svg.logo-fixed-size,
+  svg#bull-logo {
+    /* Use fixed pixel measurements that don't depend on em/rem */
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Prevent container classes from scaling logos */
+  .logo-fixed-size svg,
+  div:has(> #bull-logo) {
+    font-size: 14px !important;
+  }
+  
+  /* Prevent any text/tspan inside SVGs from scaling */
+  .logo-fixed-size text,
+  .logo-fixed-size tspan,
+  #bull-logo text,
+  #bull-logo tspan {
+    font-size: 14px !important;
+  }
+  
+  /* Force all SVG viewBox renderings to be independent of font-size */
+  svg[viewBox].logo-fixed-size,
+  svg[viewBox]#bull-logo {
+    width: auto;
+    height: auto;
+  }
+
+  /* Navigation Fixed Sizing - Prevent accessibility font size changes from affecting navigation */
+  /* Lock all header navigation elements */
+  header,
+  header *,
+  header nav,
+  header nav *,
+  header a,
+  header a *,
+  header button,
+  header button *,
+  header span,
+  header div {
+    font-size: 14px !important;
+  }
+  
+  /* Smaller font size specifically for navigation links */
+  header nav button,
+  header nav a {
+    font-size: 10px !important;
+  }
+  
+  /* Lock all side navigation elements */
+  nav,
+  nav *,
+  nav a,
+  nav a *,
+  nav button,
+  nav button *,
+  nav span,
+  nav div,
+  aside nav,
+  aside nav *,
+  [class*="navigation"],
+  [class*="navigation"] *,
+  [class*="Navigation"],
+  [class*="Navigation"] * {
+    font-size: 14px !important;
+  }
+  
+  /* Lock footer navigation elements */
+  footer nav,
+  footer nav *,
+  footer a,
+  footer a *,
+  footer button,
+  footer button * {
+    font-size: 14px !important;
+  }
+  
+  /* Specific fixed width/height for navigation icons */
+  header svg:not(#bull-logo),
+  nav svg:not(#bull-logo),
+  footer svg:not(#bull-logo) {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  
+  /* Lock mobile menu */
+  [class*="mobile-menu"],
+  [class*="mobile-menu"] *,
+  [class*="mobileMenu"],
+  [class*="mobileMenu"] * {
+    font-size: 14px !important;
+  }
+
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  .reduce-motion * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transform: none !important;
+  }
+  
+  /* ===== LIGHT MODE COLOR OVERRIDES ===== */
+  
+  .light {
+    background-color: var(--venetian-lace) !important;
+  }
+  
+  /* Keep black backgrounds as-is (for buttons and sections) */
+  .light .bg-black { background-color: var(--venetian-lace) !important; }
+  
+  /* ===== BLACK TEXT TO FENCE GREEN - LIGHT MODE ONLY ===== */
+  /* Replace black text colors with fence-green (#09332C) excluding buttons and backgrounds */
+  
+  /* General black text replacements */
+  .light .text-black:not(button):not(button *):not([role="button"]):not([role="button"] *) {
+    color: var(--fence-green) !important;
+  }
+  
+  /* Inline style overrides for black text */
+  .light [style*="color: black"]:not(button):not(button *):not([role="button"]):not([role="button"] *),
+  .light [style*="color: #000"]:not(button):not(button *):not([role="button"]):not([role="button"] *),
+  .light [style*="color: rgb(0, 0, 0)"]:not(button):not(button *):not([role="button"]):not([role="button"] *) {
+    color: var(--fence-green) !important;
+  }
+  
+  /* Hero Section - Use white text (excluding buttons) */
+  .light #hero h1:not(button):not(button *),
+  .light #hero h2:not(button):not(button *),
+  .light #hero h3:not(button):not(button *),
+  .light #hero p:not(button):not(button *),
+  .light #hero span:not(button):not(button *):not(.relative.z-10),
+  .light #hero div[class*="text-"]:not(button):not(button *) {
+    color: #ffffff !important;
+  }
+  
+  /* About Section - Replace black text with fence-green (excluding buttons) */
+  .light #about h1:not(button):not(button *),
+  .light #about h2:not(button):not(button *),
+  .light #about h3:not(button):not(button *),
+  .light #about h4:not(button):not(button *),
+  .light #about p:not(button):not(button *),
+  .light #about span:not(button):not(button *),
+  .light #about div[class*="text-"]:not(button):not(button *) {
+    color: var(--fence-green) !important;
+  }
+  
+  /* Portfolio Section - Replace black text with fence-green (excluding buttons) */
+  .light #portfolio h1:not(button):not(button *),
+  .light #portfolio h2:not(button):not(button *),
+  .light #portfolio h3:not(button):not(button *),
+  .light #portfolio h4:not(button):not(button *),
+  .light #portfolio p:not(button):not(button *),
+  .light #portfolio span:not(button):not(button *),
+  .light #portfolio div[class*="text-"]:not(button):not(button *) {
+    color: var(--fence-green) !important;
+  }
+  
+  /* Resume Section - Replace black text with fence-green (excluding buttons) */
+  .light #resume h1:not(button):not(button *),
+  .light #resume h2:not(button):not(button *),
+  .light #resume h3:not(button):not(button *),
+  .light #resume h4:not(button):not(button *),
+  .light #resume p:not(button):not(button *),
+  .light #resume span:not(button):not(button *),
+  .light #resume li:not(button):not(button *),
+  .light #resume div[class*="text-"]:not(button):not(button *) {
+    color: var(--fence-green) !important;
+  }
+  
+  /* Contact Section - Replace black text with fence-green (excluding buttons) */
+  .light #contact h1:not(button):not(button *),
+  .light #contact h2:not(button):not(button *),
+  .light #contact h3:not(button):not(button *),
+  .light #contact h4:not(button):not(button *),
+  .light #contact p:not(button):not(button *),
+  .light #contact span:not(button):not(button *),
+  .light #contact div[class*="text-"]:not(button):not(button *) {
+    color: var(--fence-green) !important;
+  }
+  
+  /* Project Pages - Replace black text with fence-green (excluding buttons) */
+  .light .project-hero-content h1:not(button):not(button *),
+  .light .project-hero-content h2:not(button):not(button *),
+  .light .project-hero-content p:not(button):not(button *),
+  .light .project-hero-content span:not(button):not(button *):not(.relative.z-10) {
+    color: var(--fence-green) !important;
+  }
+  
+  /* All Projects Page - Replace black text with fence-green (excluding buttons) */
+  .light .all-projects-page h1:not(button):not(button *),
+  .light .all-projects-page h2:not(button):not(button *),
+  .light .all-projects-page h3:not(button):not(button *),
+  .light .all-projects-page p:not(button):not(button *),
+  .light .all-projects-page span:not(button):not(button *) {
+    color: var(--fence-green) !important;
+  }
+  
+  /* ===== KEY FEATURES BULLETS - ORANGE IN LIGHT MODE ===== */
+  /* CRITICAL: Force all bullet points to be orange (#F0531C) in light mode */
+  
+  /* All rounded bullets */
+  .light .rounded-full.bg-aurelius-gold,
+  .light .rounded-full[class*="bg-aurelius"],
+  .light div.rounded-full[class*="w-1"],
+  .light div.rounded-full[class*="w-2"] {
+    background-color: #F0531C !important;
+  }
+  
+  /* Specific bullet sizes */
+  .light .w-1.h-1.rounded-full,
+  .light .w-1\\.5.h-1\\.5.rounded-full,
+  .light .w-2.h-2.rounded-full,
+  .light .w-3.h-3.rounded-full,
+  .light .w-4.h-4.rounded-full {
+    background-color: #F0531C !important;
+  }
+  
+  /* Project page specific bullets */
+  .light .project-page .rounded-full[class*="bg-"],
+  .light [class*="project"] .rounded-full[class*="bg-"] {
+    background-color: #F0531C !important;
+  }
+  
+  /* Dynamic Convergences - Always use dark mode background */
+  .light #dynamic-convergences {
+    background-color: #000000 !important;
+  }
+  
+  /* Force Dynamic Convergences to ignore all light mode color overrides */
+  .light #dynamic-convergences .bg-gray-900,
+  .light #dynamic-convergences .bg-gray-800,
+  .light #dynamic-convergences .bg-gray-700 {
+    background-color: inherit !important;
+  }
+  
+  .light #dynamic-convergences .text-white,
+  .light #dynamic-convergences .text-gray-300,
+  .light #dynamic-convergences .text-gray-400,
+  .light #dynamic-convergences .text-gray-500 {
+    color: inherit !important;
+  }
+  
+  .light #dynamic-convergences .border-gray-700,
+  .light #dynamic-convergences .border-gray-800 {
+    border-color: inherit !important;
+  }
+  
+
+  
+  /* Dynamic Convergences button hover states - consistent orange in both themes */
+  #dynamic-convergences .hover\\:bg-aurelius-gold\\/10:hover {
+    background-color: rgba(248, 154, 28, 0.1) !important;
+  }
+  
+  #dynamic-convergences .hover\\:bg-aurelius-gold-light:hover {
+    background-color: #FBB454 !important;
+  }
+  
+  /* Star Burst Effects - Using CSS Custom Properties */
+  #dynamic-convergences .convergence-explosion {
+    background: radial-gradient(circle, 
+      var(--star-burst-center-1) 0%, 
+      var(--star-burst-center-2) 20%,
+      var(--star-burst-center-3) 50%, 
+      var(--star-burst-center-4) 70%,
+      transparent 80%);
+  }
+  
+  #dynamic-convergences .convergence-ring.ring-1 {
+    border-color: var(--star-burst-ring-1) !important;
+  }
+  
+  #dynamic-convergences .convergence-ring.ring-2 {
+    border-color: var(--star-burst-ring-2) !important;
+  }
+  
+  #dynamic-convergences .convergence-ring.ring-3 {
+    border-color: var(--star-burst-ring-3) !important;
+  }
+  
+  #dynamic-convergences .convergence-ring.ring-4 {
+    border-color: var(--star-burst-ring-4) !important;
+  }
+  
+  #dynamic-convergences .convergence-sparkle {
+    background: radial-gradient(circle, 
+      var(--star-burst-sparkle-1) 0%, 
+      var(--star-burst-sparkle-2) 40%,
+      var(--star-burst-sparkle-3) 70%, 
+      transparent 100%) !important;
+    filter: var(--star-burst-filter) !important;
+  }
+  
+  /* Ensure Dynamic Convergences titles use consistent colors */
+  #dynamic-convergences .text-white {
+    color: #ffffff !important;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3) !important;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5)) !important;
+  }
+  
+
+  
+  /* Ensure all Dynamic Convergences orange elements use consistent orange in both themes */
+  #dynamic-convergences .text-aurelius-gold,
+  #dynamic-convergences span.text-aurelius-gold {
+    color: #F89A1C !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7) !important;
+  }
+  
+  #dynamic-convergences .bg-aurelius-gold {
+    background-color: #F89A1C !important;
+  }
+  
+  #dynamic-convergences .border-aurelius-gold {
+    border-color: #F89A1C !important;
+  }
+  
+  /* HR line in Dynamic Convergences */
+  #dynamic-convergences .w-24.h-1.bg-aurelius-gold {
+    background-color: #F89A1C !important;
+  }
+  
+  /* Navigation Specific Old Color Overrides */
+  .light .text-orange-500,
+  .light .text-orange-400,
+  .light .text-orange-600,
+  .light .text-yellow-500,
+  .light .text-yellow-400,
+  .light .text-yellow-600 {
+    color: var(--fiery-glow);
+  }
+  
+  .light .bg-orange-500,
+  .light .bg-orange-400,
+  .light .bg-orange-600,
+  .light .bg-yellow-500,
+  .light .bg-yellow-400,
+  .light .bg-yellow-600 {
+    background-color: var(--fiery-glow);
+  }
+  
+  .light .border-orange-500,
+  .light .border-orange-400,
+  .light .border-orange-600,
+  .light .border-yellow-500,
+  .light .border-yellow-400,
+  .light .border-yellow-600 {
+    border-color: var(--fiery-glow);
+  }
+  
+  /* Logo Preservation */
+  .fixed.inset-0.z-50 .text-aurelius-gold,
+  .fixed.inset-0.z-50 .text-logo-gold {
+    color: var(--logo-gold);
+  }
+  
+  /* Enhanced Focus Styles */
+  .focus-visible:focus-visible {
+    outline: 3px solid var(--aurelius-gold);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px rgba(248, 154, 28, 0.3);
+  }
+  
+  .light .focus-visible:focus-visible {
+    outline: 3px solid var(--fiery-glow);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px rgba(240, 83, 28, 0.3);
+  }
+  
+  /* Navigation Scroll Offset Utilities */
+  .nav-scroll-offset {
+    scroll-margin-top: 100px;
+  }
+  
+  .nav-scroll-offset-mobile {
+    scroll-margin-top: 80px;
+  }
+  
+  .nav-scroll-offset-desktop {
+    scroll-margin-top: 120px;
+  }
+  
+  /* Responsive Navigation Scroll Offsets */
+  @media (max-width: 768px) {
+    .nav-scroll-offset {
+      scroll-margin-top: 80px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .nav-scroll-offset {
+      scroll-margin-top: 120px;
+    }
+  }
+  
+  /* Section Title Anchor Fix */
+  .section-anchor-fix {
+    position: relative;
+  }
+  
+  .section-anchor-fix::before {
+    content: '';
+    display: block;
+    height: 100px;
+    margin-top: -100px;
+    visibility: hidden;
+  }
+  
+  @media (max-width: 768px) {
+    .section-anchor-fix::before {
+      height: 80px;
+      margin-top: -80px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .section-anchor-fix::before {
+      height: 120px;
+      margin-top: -120px;
+    }
+  }
+
+  /* Screen Reader Support */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--aurelius-gold);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    z-index: 1000;
+  }
+  
+  .light .skip-link {
+    background: var(--fiery-glow);
+    color: white;
+  }
+  
+  .skip-link:focus {
+    top: 6px;
+  }
+  
+  /* Hero Section Light Mode Overrides */
+  .light #hero {
+    background-color: #f2b43b !important;
+  }
+  
+  /* Hero Section Text Color Overrides - White Text (excluding buttons) */
+  .light #hero h1:not(button):not(button *),
+  .light #hero p:not(button):not(button *),
+  .light #hero span:not(.relative.z-10):not(button):not(button *),
+  .light #hero .text-lg:not(button):not(button *),
+  .light #hero .text-xl:not(button):not(button *),
+  .light #hero .text-6xl:not(button):not(button *),
+  .light #hero .text-7xl:not(button):not(button *),
+  .light #hero .text-8xl:not(button):not(button *),
+  .light #hero .text-xs:not(button):not(button *),
+  .light #hero div[class*="text-"]:not(button):not(button *) {
+    color: #ffffff !important;
+    text-shadow: none !important;
+    background-image: none !important;
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+    background-clip: initial !important;
+  }
+  
+  /* Hero Section Button Overrides - Black with Gold Text */
+  .light #hero a[href="#portfolio"],
+  .light #hero a[href="#contact"] {
+    background-color: #000000 !important;
+    color: #f2b43b !important;
+    border-color: #000000 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+  }
+  
+  .light #hero a[href="#portfolio"]:hover,
+  .light #hero a[href="#contact"]:hover {
+    background-color: #1a1a1a !important;
+    color: #f2b43b !important;
+    transform: scale(1.05);
+  }
+  
+
+  
+  /* Hero Section Button Text Overrides - Force yellow text in light mode */
+  .light #hero a .relative.z-10,
+  .light #hero a span.relative.z-10,
+  .light #hero a span[class*="relative"] {
+    color: #f2b43b !important;
+  }
+  
+  .light #hero a:hover .relative.z-10,
+  .light #hero a:hover span.relative.z-10,
+  .light #hero a:hover span[class*="relative"] {
+    color: #f2b43b !important;
+  }
+  
+  /* PROJECT PAGE HERO ENHANCEMENTS - 85VH HERO OPTIMIZATION */
+  /* Perfect gradients for 85% screen height hero sections */
+  
+  /* Dark Mode Project Hero - 85vh Optimized Gradients */
+  .bg-gradient-to-b.from-black\/60.via-transparent.to-black\/80 {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, transparent 35%, rgba(0, 0, 0, 0.95) 100%) !important;
+  }
+  
+  /* Light Mode Project Hero - 85vh Venetian Lace Gradients */
+  .light .bg-gradient-to-b.from-black\/60.via-transparent.to-black\/80 {
+    background: linear-gradient(to bottom, rgba(247, 237, 218, 0.5) 0%, transparent 35%, rgba(247, 237, 218, 0.95) 100%) !important;
+  }
+  
+  /* Enhanced top gradient for 85vh hero sections */
+  .light .bg-gradient-to-t.from-black.via-black\/40.to-transparent {
+    background: linear-gradient(to top, rgba(247, 237, 218, 1) 0%, rgba(247, 237, 218, 0.4) 65%, transparent 100%) !important;
+  }
+  
+  /* 85vh hero specific enhanced gradients */
+  .project-hero-large .bg-gradient-to-b.from-black\/60.via-transparent.to-black\/80 {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, transparent 30%, rgba(0, 0, 0, 1) 100%) !important;
+  }
+  
+  .light .project-hero-large .bg-gradient-to-b.from-black\/60.via-transparent.to-black\/80 {
+    background: linear-gradient(to bottom, rgba(247, 237, 218, 0.4) 0%, transparent 30%, rgba(247, 237, 218, 1) 100%) !important;
+  }
+  
+  /* Enhanced image visibility for 85vh heroes */
+  .project-hero-large [style*="background-image"] {
+    opacity: 1 !important;
+    filter: brightness(1.1) contrast(1.15) !important;
+  }
+  
+  .light .project-hero-large [style*="background-image"] {
+    opacity: 0.95 !important;
+    filter: brightness(1.15) contrast(1.2) !important;
+  }
+  
+  /* Enhanced thumbnail visibility across all project cards */
+  .project-card img,
+  [class*="project"] img,
+  .portfolio img {
+    filter: brightness(1.2) contrast(1.15) saturate(1.1) !important;
+    transition: filter 0.3s ease-in-out !important;
+  }
+  
+  .project-card:hover img,
+  [class*="project"]:hover img,
+  .portfolio:hover img {
+    filter: brightness(1.3) contrast(1.25) saturate(1.15) !important;
+  }
+  
+  /* Enhanced visibility for images with ImageWithFallback component */
+  img[alt*="project"],
+  img[alt*="Project"],
+  .ImageWithFallback img {
+    filter: brightness(1.25) contrast(1.2) saturate(1.1) !important;
+  }
+  
+  /* Specific thumbnail enhancement utility classes */
+  .thumbnail-enhanced {
+    filter: brightness(1.3) contrast(1.25) saturate(1.15) !important;
+  }
+  
+  .thumbnail-visible {
+    filter: brightness(1.25) contrast(1.2) saturate(1.1) !important;
+  }
+  
+  .thumbnail-super-visible {
+    filter: brightness(1.4) contrast(1.3) saturate(1.2) !important;
+  }
+  
+  /* 85vh hero content positioning optimization - 45% from top */
+  .project-hero-large .relative.z-10 {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 45%;
+  }
+
+  /* Responsive adjustments for hero positioning */
+  @media (max-width: 768px) {
+    .project-hero-large .relative.z-10 {
+      padding-top: 35%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .project-hero-large .relative.z-10 {
+      padding-top: 45%;
+    }
+  }
+  
+
+  
+  /* Hero Section Gradient Animations Override */
+  .light #hero .bg-gradient-to-r:not(button):not(button *) {
+    background: linear-gradient(to right, #ffffff 0%, #f0f0f0 50%, #ffffff 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+  }
+  
+  /* Hero Section Accent Colors Override (excluding buttons) */
+  .light #hero .text-aurelius-gold:not(button):not(button *),
+  .light #hero .text-aurelius-gold-light:not(button):not(button *) {
+    color: #ffffff !important;
+  }
+  
+  /* Override any text color classes in hero section for light mode (excluding buttons) */
+  .light #hero [class*="text-gray"]:not(button):not(button *),
+  .light #hero [class*="text-white"]:not(button):not(button *),
+  .light #hero [class*="text-slate"]:not(button):not(button *) {
+    color: #ffffff !important;
+  }
+  
+  /* Hero Section Background Image Overlays for Better Contrast */
+  
+  /* Hero Section Scroll Indicator and Small Elements (excluding buttons) */
+  .light #hero .text-muted-foreground:not(button):not(button *) {
+    color: #ffffff !important;
+  }
+  
+  .light #hero .text-xs:not(button):not(button *) {
+    color: #ffffff !important;
+  }
+  
+  /* Hero Section Eyebrow Text Override (excluding buttons) */
+  .light #hero .text-aurelius-gold.text-sm:not(button):not(button *),
+  .light #hero .text-aurelius-gold.text-base:not(button):not(button *) {
+    color: #ffffff !important;
+  }
+  
+  /* Hero Section Underline Elements - Keep as decorative elements (not text) */
+  .light #hero .bg-aurelius-gold:not(button),
+  .light #hero .bg-aurelius-gold-light:not(button) {
+    background-color: #ffffff !important;
+  }
+  
+  /* Hero Section Gradient Line - Decorative element */
+  .light #hero .bg-gradient-to-r.from-aurelius-gold:not(button) {
+    background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0.5) 50%, transparent 100%) !important;
+  }
+  
+  /* Hero Text Glow Overrides - #f2b43b for Both Modes */
+  #hero .hero-text-glow,
+  #hero .animate-hero-text-glow,
+  #hero .animate-hero-text-pulse-glow,
+  #hero .animate-hero-subtext-glow {
+    text-shadow: 0 0 20px rgba(242, 180, 59, 0.6), 0 0 40px rgba(242, 180, 59, 0.3), 0 0 60px rgba(242, 180, 59, 0.2) !important;
+    filter: drop-shadow(0 0 20px rgba(242, 180, 59, 0.6)) drop-shadow(0 0 40px rgba(242, 180, 59, 0.3)) !important;
+  }
+  
+  .light #hero .hero-text-glow,
+  .light #hero .animate-hero-text-glow,
+  .light #hero .animate-hero-text-pulse-glow,
+  .light #hero .animate-hero-subtext-glow {
+    text-shadow: 0 0 20px rgba(242, 180, 59, 0.6), 0 0 40px rgba(242, 180, 59, 0.3), 0 0 60px rgba(242, 180, 59, 0.2) !important;
+    filter: drop-shadow(0 0 20px rgba(242, 180, 59, 0.6)) drop-shadow(0 0 40px rgba(242, 180, 59, 0.3)) !important;
+  }
+  
+  /* About Section Light Mode Overrides */
+  .light #about {
+    background-color: #f2b43b !important;
+  }
+  
+  /* About Section Text Color Overrides - Fence Green Text (excluding buttons) */
+  .light #about h2:not(button):not(button *),
+  .light #about p:not(button):not(button *),
+  .light #about span:not(button):not(button *) {
+    color: var(--fence-green) !important;
+  }
+  
+  /* About Section Specific Text Classes (excluding buttons) */
+  .light #about .text-white:not(button):not(button *) {
+    color: var(--fence-green) !important;
+  }
+  
+  .light #about .text-gray-300:not(button):not(button *),
+  .light #about .text-gray-400:not(button):not(button *) {
+    color: var(--fence-green) !important;
+  }
+  
+  /* About Section Orange/Gold Color Replacements with Fence Green (text only, excluding buttons) */
+  .light #about .text-aurelius-gold:not(button):not(button *),
+  .light #about .text-aurelius-gold-light:not(button):not(button *) {
+    color: var(--fence-green) !important;
+  }
+  
+  /* About Section Decorative Elements - Keep fence-green for non-button backgrounds */
+  .light #about .bg-aurelius-gold:not(button) {
+    background-color: var(--fence-green) !important;
+  }
+  
+  .light #about .border-aurelius-gold:not(button) {
+    border-color: var(--fence-green) !important;
+  }
+  
+  /* About Section Particle Colors - Fence Green */
+  .light #about .bg-aurelius-gold\/30,
+  .light #about .bg-aurelius-gold\/20 {
+    background-color: rgba(9, 51, 44, 0.3) !important;
+  }
+  
+  /* About Section Border Colors - Fence Green */
+  .light #about .border-aurelius-gold\/10,
+  .light #about .border-aurelius-gold\/15,
+  .light #about .border-aurelius-gold\/20,
+  .light #about .border-aurelius-gold\/30,
+  .light #about .border-aurelius-gold\/60 {
+    border-color: rgba(9, 51, 44, 0.3) !important;
+  }
+  
+  /* About Section Button Overrides - Keep buttons styled separately */
+  .light #about a[href="#contact"] {
+    color: var(--fence-green) !important;
+    border-color: rgba(9, 51, 44, 0.3) !important;
+  }
+  
+  .light #about a[href="#contact"]:hover {
+    border-color: rgba(9, 51, 44, 0.6) !important;
+  }
+  
+  /* About Section Button Background Fill */
+  .light #about a .bg-aurelius-gold {
+    background-color: var(--fence-green) !important;
+  }
+  
+  /* About Section Button Text Color on Hover - Gold */
+  .light #about a .group-hover\\:text-black {
+    color: #f2b43b !important;
+  }
+  
+  /* ===== ALL SECTION TITLE DECORATIVE LINES - ORANGE IN LIGHT MODE ===== */
+  /* CRITICAL: Force all decorative lines to be orange (#F0531C) in light mode */
+  
+  /* Universal override - catches all variations */
+  .light .bg-aurelius-gold:not(button):not(button *):not([class*="group-hover"]):not(.backdrop-blur) {
+    background-color: #F0531C !important;
+  }
+  
+  /* Specific section title underlines */
+  .light #about .w-24.h-1,
+  .light #about .w-24.h-0\\.5,
+  .light #portfolio .w-24.h-1,
+  .light #portfolio .w-24.h-0\\.5,
+  .light #resume .w-24.h-1,
+  .light #resume .w-24.h-0\\.5,
+  .light #resume .h-0\\.5,
+  .light #contact .w-24.h-1,
+  .light #contact .w-24.h-0\\.5,
+  .light #dynamic-convergences .w-24.h-1,
+  .light #dynamic-convergences .w-24.h-0\\.5 {
+    background-color: #F0531C !important;
+  }
+  
+  /* All Projects Page */
+  .light .all-projects-page .w-24.h-0\\.5,
+  .light .all-projects-page .w-24.h-1 {
+    background-color: #F0531C !important;
+  }
+  
+  /* Project Pages */
+  .light .project-page .w-24.h-1,
+  .light .project-page .w-24.h-0\\.5,
+  .light .project-page .h-0\\.5 {
+    background-color: #F0531C !important;
+  }
+
+
+  
+  /* Light Mode Particle System Updates - Desktop Only */
+  /* FORCE SHOW: All particle systems in light mode except Dynamic Convergences and Contact (Desktop Only) */
+  @media (min-width: 769px) {
+    .light .fixed.inset-0.pointer-events-none:not(#dynamic-convergences *):not(#contact *),
+    .light .absolute.inset-0.pointer-events-none:not(#dynamic-convergences *):not(#contact *),
+    .light [class*="particle"]:not(#dynamic-convergences *):not(#contact *),
+    .light [data-particle]:not(#dynamic-convergences *):not(#contact *) {
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      z-index: 1 !important;
+    }
+    
+    /* Hide global particle systems in Dynamic Convergences in light mode but allow white stardust */
+    .light #dynamic-convergences .fixed.inset-0.pointer-events-none,
+    .light #dynamic-convergences [class*="GlobalParticle"],
+    .light #dynamic-convergences canvas[class*="particle"],
+    .light #dynamic-convergences canvas[id*="particle"],
+    .light #dynamic-convergences .global-particle-system {
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      z-index: -1 !important;
+    }
+    
+    /* Allow white stardust particles in Dynamic Convergences in light mode */
+    .light #dynamic-convergences .absolute.inset-0.pointer-events-none,
+    .light #dynamic-convergences [class*="SectionParticle"],
+    .light #dynamic-convergences [data-particle-overlay],
+    .light #dynamic-convergences .particle-overlay {
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      z-index: 1 !important;
+    }
+  }
+  
+  /* ===== PROJECT PAGE BUTTON FIXES - LIGHT MODE HOVER STATES ===== */
+  
+  /* Project Hero "Explore Project" Button ONLY - Outline button with border, exclude solid bg buttons */
+  .light .project-hero-content button[class*="border"]:not([class*="bg-aurelius-gold"]):not([class*="bg-fiery-glow"]):hover,
+  .light .project-hero-content button[class*="border"][class*="hover:bg-"]:hover {
+    color: #ffffff !important;
+  }
+  
+  .light .project-hero-content button[class*="border"]:not([class*="bg-aurelius-gold"]):not([class*="bg-fiery-glow"]):hover *,
+  .light .project-hero-content button[class*="border"][class*="hover:bg-"]:hover * {
+    color: #ffffff !important;
+  }
+  
+  /* Project Page Footer "View All Projects" Button ONLY - Fix text color on hover in light mode */
+  .light button[class*="border-aurelius-gold"][class*="rounded-lg"]:not([class*="group"]):hover,
+  .light button[class*="border-fiery-glow"][class*="rounded-lg"]:not([class*="group"]):hover {
+    color: #ffffff !important;
+  }
+  
+  .light button[class*="border-aurelius-gold"][class*="rounded-lg"]:not([class*="group"]):hover *,
+  .light button[class*="border-fiery-glow"][class*="rounded-lg"]:not([class*="group"]):hover * {
+    color: #ffffff !important;
+  }
+
+  /* Light Mode Particle Color Overrides - Orange on Home Page, Dark elsewhere (Desktop Only, excluding Contact and Dynamic Convergences) */
+  @media (min-width: 769px) {
+    /* Hero Section Particles - Orange in Light Mode */
+    .light #hero .bg-aurelius-gold\/30,
+    .light #hero .bg-aurelius-gold\/20,
+    .light #hero .bg-aurelius-gold\/40,
+    .light #hero .bg-aurelius-gold\/50,
+    .light #hero .bg-aurelius-gold\/60 {
+      background-color: rgba(240, 83, 28, 0.8) !important; /* Orange particles on home page */
+    }
+    
+    /* All Other Sections - Dark particles in Light Mode */
+    .light .bg-aurelius-gold\/30:not(#hero *):not(#contact *):not(#dynamic-convergences *),
+    .light .bg-aurelius-gold\/20:not(#hero *):not(#contact *):not(#dynamic-convergences *),
+    .light .bg-aurelius-gold\/40:not(#hero *):not(#contact *):not(#dynamic-convergences *),
+    .light .bg-aurelius-gold\/50:not(#hero *):not(#contact *):not(#dynamic-convergences *),
+    .light .bg-aurelius-gold\/60:not(#hero *):not(#contact *):not(#dynamic-convergences *) {
+      background-color: rgba(0, 0, 0, 0.8) !important; /* Dark particles everywhere else */
+    }
+    
+    /* Hero Section - Orange particles */
+    .light #hero .bg-aurelius-gold,
+    .light #hero .bg-aurelius-amber,
+    .light #hero .bg-aurelius-orange {
+      background-color: rgba(240, 83, 28, 0.8) !important;
+    }
+    
+    /* Hero Section - Force inline styles to orange */
+    .light #hero [style*="rgba(248, 154, 28"] {
+      background-color: rgba(240, 83, 28, 0.8) !important;
+    }
+    
+    /* All other sections - Dark particles */
+    .light .bg-aurelius-gold:not(#hero *):not(#contact *):not(#dynamic-convergences *) {
+      color: #f0531c !important;
+      background-color: #f0531c1a !important;
+    }
+    
+    .light .bg-aurelius-amber:not(#hero *):not(#contact *):not(#dynamic-convergences *),
+    .light .bg-aurelius-orange:not(#hero *):not(#contact *):not(#dynamic-convergences *) {
+      background-color: rgba(0, 0, 0, 0.8) !important;
+    }
+    
+    /* Force all particle background colors in light mode to be dark and visible (excluding Hero, Contact and Dynamic Convergences) */
+    .light [style*="rgba(248, 154, 28"]:not(#hero *):not(#dynamic-convergences *):not(#contact *) {
+      background-color: rgba(0, 0, 0, 0.8) !important;
+    }
+  }
+  
+  /* Light Mode Particle Shadow Effects (Desktop Only, excluding Contact and Dynamic Convergences) */
+  @media (min-width: 769px) {
+    /* Hero Section - Orange glow */
+    .light #hero .shadow-aurelius-gold,
+    .light #hero .glow-aurelius-gold {
+      box-shadow: 0 0 20px rgba(240, 83, 28, 0.6) !important;
+      filter: drop-shadow(0 0 12px rgba(240, 83, 28, 0.7)) !important;
+    }
+    
+    /* Other Sections - Dark shadows */
+    .light .shadow-aurelius-gold:not(#hero *):not(#contact *):not(#dynamic-convergences *) {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6) !important;
+    }
+    
+    .light .glow-aurelius-gold:not(#hero *):not(#contact *):not(#dynamic-convergences *) {
+      filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.7)) !important;
+    }
+  }
+  
+  /* Global particle visibility boost (Desktop Only, excluding Contact and Dynamic Convergences) */
+  @media (min-width: 769px) {
+    .fixed.inset-0.pointer-events-none:not(#contact *):not(#dynamic-convergences *),
+    .absolute.inset-0.pointer-events-none:not(#contact *):not(#dynamic-convergences *) {
+      z-index: 1 !important;
+    }
+    
+    /* Ensure particles are always on top of background but below content (excluding Contact and Dynamic Convergences) */
+    [class*="GlobalParticle"]:not(#contact *):not(#dynamic-convergences *),
+    [data-particle-system]:not(#contact *):not(#dynamic-convergences *),
+    .particle-system:not(#contact *):not(#dynamic-convergences *) {
+      z-index: 1 !important;
+    }
+  }
+  
+  /* Dynamic Convergences - Hide ALL particles EXCEPT white stardust from SectionParticleOverlay */
+  #dynamic-convergences .fixed.inset-0.pointer-events-none,
+  #dynamic-convergences canvas[class*="particle"],
+  #dynamic-convergences canvas[id*="particle"],
+  #dynamic-convergences .global-particle-system,
+  #dynamic-convergences div[style*="background: radial-gradient"][style*="rgba"],
+  #dynamic-convergences div[class*="animate-particle"],
+  #dynamic-convergences div[class*="particle-float"],
+  #dynamic-convergences [class*="GlobalParticle"],
+  #dynamic-convergences [data-particle]:not([data-white-stardust]) {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    z-index: -1 !important;
+  }
+  
+  /* Allow white stardust particles ONLY in Dynamic Convergences */
+  #dynamic-convergences .absolute.inset-0.pointer-events-none,
+  #dynamic-convergences [class*="SectionParticle"],
+  #dynamic-convergences [data-particle-overlay],
+  #dynamic-convergences .particle-overlay {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 1 !important;
+  }
+  
+  /* Enhance white stardust particles with extra glow and animations in Dynamic Convergences */
+  #dynamic-convergences div[style*="rgba(255, 255, 255"],
+  #dynamic-convergences div[style*="rgba(248, 250, 252"],
+  #dynamic-convergences div[style*="rgba(241, 245, 249"] {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.6), 0 0 45px rgba(255, 255, 255, 0.3) !important;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)) !important;
+    animation: whiteStardustTwinkle 3s ease-in-out infinite !important;
+  }
+  
+  /* White Stardust Animation Classes */
+  .animate-white-stardust-twinkle { animation: whiteStardustTwinkle 3s ease-in-out infinite; }
+  .animate-white-stardust-float { animation: whiteStardustFloat 6s ease-in-out infinite; }
+  .animate-white-stardust-pulse { animation: whiteStardustPulse 2s ease-in-out infinite; }
+  
+  /* Mobile-specific: Hide ALL Dynamic Convergences particles including white stardust for performance */
+  @media (max-width: 768px) {
+    #dynamic-convergences .fixed.inset-0.pointer-events-none,
+    #dynamic-convergences .absolute.inset-0.pointer-events-none,
+    #dynamic-convergences [class*="SectionParticle"],
+    #dynamic-convergences [data-particle-overlay],
+    #dynamic-convergences .particle-overlay,
+    #dynamic-convergences canvas[class*="particle"],
+    #dynamic-convergences canvas[id*="particle"],
+    #dynamic-convergences .global-particle-system,
+    #dynamic-convergences .particle-system,
+    #dynamic-convergences div[style*="background: radial-gradient"][style*="rgba"],
+    #dynamic-convergences div[class*="animate-particle"],
+    #dynamic-convergences div[class*="particle-float"],
+    #dynamic-convergences [class*="GlobalParticle"],
+    #dynamic-convergences [data-particle],
+    #dynamic-convergences [class*="particle"] {
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      z-index: -1 !important;
+    }
+  }
+
+  /* Full Screen Mobile Navigation Styles */
+  @media (max-width: 768px) {
+    /* Prevent body scroll when mobile menu is open */
+    body.mobile-menu-open {
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+    }
+    
+    /* Full screen mobile navigation backdrop */
+    .mobile-nav-backdrop {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    
+    /* Mobile navigation close button hover effects */
+    .mobile-nav-close-btn {
+      transition: all 0.2s ease-in-out;
+      border-radius: 50%;
+      background-color: transparent;
+    }
+    
+    .mobile-nav-close-btn:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: scale(1.1) rotate(90deg);
+    }
+    
+    .light .mobile-nav-close-btn:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Mobile navigation menu items */
+    .mobile-nav-item {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .mobile-nav-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.5s ease-in-out;
+    }
+    
+    .mobile-nav-item:hover::before {
+      left: 100%;
+    }
+    
+    .light .mobile-nav-item::before {
+      background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.05), transparent);
+    }
+    
+    /* Mobile navigation active indicator animation */
+    .mobile-nav-active-indicator {
+      animation: mobileNavGlow 2s ease-in-out infinite;
+    }
+    
+    .light .mobile-nav-active-indicator {
+      animation: mobileNavGlowLight 2s ease-in-out infinite;
+    }
+    
+    /* Mobile navigation logo glow */
+    .mobile-nav-logo {
+      filter: drop-shadow(0 0 10px rgba(248, 154, 28, 0.3));
+    }
+    
+    .light .mobile-nav-logo {
+      filter: drop-shadow(0 0 10px rgba(240, 83, 28, 0.3));
+    }
+    
+    /* Mobile navigation entrance animations */
+    .mobile-nav-item {
+      animation: mobileNavSlideIn 0.4s ease-out;
+    }
+    
+    .mobile-nav-backdrop {
+      animation: mobileNavFadeIn 0.3s ease-out;
+    }
+    
+    /* Accessibility improvements for mobile navigation */
+    .mobile-nav-item:focus,
+    .mobile-nav-close-btn:focus {
+      outline: 3px solid;
+      outline-color: var(--aurelius-gold);
+      outline-offset: 3px;
+    }
+    
+    .light .mobile-nav-item:focus,
+    .light .mobile-nav-close-btn:focus {
+      outline-color: var(--fiery-glow);
+    }
+    
+    /* Reduced motion support for mobile navigation */
+    @media (prefers-reduced-motion: reduce) {
+      .mobile-nav-item,
+      .mobile-nav-close-btn,
+      .mobile-nav-logo {
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+      }
+      
+      .mobile-nav-item::before {
+        display: none;
+      }
+    }
+    
+    .reduce-motion .mobile-nav-item,
+    .reduce-motion .mobile-nav-close-btn,
+    .reduce-motion .mobile-nav-logo {
+      transition: none !important;
+      animation: none !important;
+      transform: none !important;
+    }
+    
+    .reduce-motion .mobile-nav-item::before {
+      display: none;
+    }
+  }
+  
+  /* ===== PROFESSIONAL EXPERIENCE BUTTONS - LIGHT MODE (FIXED) ===== */
+  
+  /* Resume Section - Professional Experience Tab Buttons in Light Mode */
+  .light #resume .bg-aurelius-gold {
+    background-color: #f0531c1a !important; /* Light Fiery Glow background */
+    color: #f0531c !important; /* Fiery Glow text */
+  }
+  
+  /* Resume Section - Inactive Tab Button States in Light Mode */
+  .light #resume button:not(.bg-aurelius-gold) {
+    background-color: transparent !important; /* Transparent background */
+    color: #09332C !important; /* Dark Fence Green text */
+  }
+  
+  /* Resume Section - Tab Button Hover States in Light Mode */
+  .light #resume button:not(.bg-aurelius-gold):hover {
+    background-color: rgba(240, 83, 28, 0.1) !important; /* Light orange hover background */
+    color: #f0531c !important; /* Fiery Glow text on hover */
+  }
+  
+  /* Resume Section - Text Color Overrides for Light Mode */
+  .light #resume .text-gray-300 {
+    color: #09332C !important; /* Dark Fence Green for inactive states */
+  }
+  
+  .light #resume .hover\\:text-aurelius-gold:hover {
+    color: #f0531c !important; /* Fiery Glow on hover */
+  }
+  
+  /* Resume Section - Border Colors for Light Mode */
+  .light #resume .border-gray-800 {
+    border-color: #09332C !important; /* Dark border for definition */
+  }
+  
+  /* Resume Section - Download Button Styling for Light Mode */
+  .light #resume button.group {
+    border-color: #09332C !important; /* Dark border */
+    color: #09332C !important; /* Dark text */
+  }
+  
+  .light #resume button.group:hover {
+    background-color: #09332C !important; /* Dark background on hover */
+    color: #F7EDDA !important; /* Venetian Lace text on hover */
+  }
+  
+  /* Resume Section - Download Button Animation Background */
+  .light #resume button.group:hover .bg-aurelius-gold {
+    background-color: #09332C !important; /* Dark background for animation */
+  }
+  
+  /* Resume Section - Download Button Text Override */
+  .light #resume button.group .relative.z-20 {
+    color: #09332C !important; /* Dark text for download button */
+  }
+  
+  .light #resume button.group:hover .relative.z-20 {
+    color: #F7EDDA !important; /* Light text on dark background */
+  }
+  
+  /* Resume Section - Download Button Dark Mode Fix */
+  #resume button.group .relative.z-20 {
+    color: var(--aurelius-gold) !important; /* Orange text in dark mode */
+  }
+  
+  #resume button.group:hover .relative.z-20 {
+    color: #ffffff !important; /* White text on hover in dark mode for contrast */
+  }
+  
+  /* Resume Section - Button Focus States for Accessibility */
+  .light #resume button:focus-visible {
+    outline: 3px solid #f0531c !important;
+    outline-offset: 2px !important;
+  }
+  
+  /* ===== PROJECT GALLERY YELLOW BACKGROUND FIX ===== */
+  
+  /* Force Project Gallery section to have yellow background in light mode - Multiple selectors for maximum coverage */
+  .light .project-image-gallery-section,
+  .light section.project-image-gallery-section,
+  .light [class*="project-image-gallery-section"] {
+    background-color: #f2b43b !important;
+    background-image: none !important;
+    background: #f2b43b !important;
+  }
+  
+  /* Override any potential conflicting background styles in project pages */
+  .light section.py-20.project-image-gallery-section {
+    background: #f2b43b !important;
+  }
+  
+  /* Ensure Project Gallery text contrast in light mode */
+  .light .project-image-gallery-section h3,
+  .light .project-image-gallery-section .text-3xl,
+  .light .project-image-gallery-section .text-4xl {
+    color: #09332C !important; /* Dark Fence Green for headings */
+  }
+  
+  .light .project-image-gallery-section p,
+  .light .project-image-gallery-section .text-gray-400 {
+    color: #2E4B3C !important; /* Norfolk Green for descriptions */
+  }
+  
+  /* Project Gallery decorative line in light mode */
+  .light .project-image-gallery-section .w-24,
+  .light .project-image-gallery-section .bg-aurelius-gold,
+  .light .project-image-gallery-section .h-0\\.5 {
+    background-color: #F0531C !important; /* Fiery Glow for accent line */
+  }
+  
+  /* Project Gallery image labels in light mode */
+  .light .project-image-gallery-section .backdrop-blur-md {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+  
+  .light .project-image-gallery-section .backdrop-blur-md h4,
+  .light .project-image-gallery-section .backdrop-blur-md .text-white {
+    color: #09332C !important;
+  }
+  
+  .light .project-image-gallery-section .backdrop-blur-md p,
+  .light .project-image-gallery-section .backdrop-blur-md .text-gray-300 {
+    color: #2E4B3C !important;
+  }
+  
+  /* Project Gallery bottom decorative lines in light mode */
+  .light .project-image-gallery-section .bg-gradient-to-r {
+    background: linear-gradient(to right, transparent, #F0531C, transparent) !important;
+  }
+}

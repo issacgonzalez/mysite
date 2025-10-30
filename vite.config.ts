@@ -12,8 +12,10 @@ export default defineConfig(({ command }) => {
   const isBuild = command === 'build'
 
   return {
-    plugins: [react(/* { fastRefresh: false } // <- uncomment temporarily if HMR acts up */)],
-    // "/" in dev, "/mysite/" when building for GitHub Pages
+    plugins: [react()],
+    // IMPORTANT:
+    // Your repo is named "mysite"
+    // So production paths must start with /mysite/
     base: isBuild ? '/mysite/' : '/',
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
@@ -28,7 +30,6 @@ export default defineConfig(({ command }) => {
     server: {
       port: 3000,
       open: true,
-      // overlay: false, // <- uncomment if you want to hide Vite error overlay
     },
     build: {
       outDir: 'dist',
@@ -54,7 +55,6 @@ export default defineConfig(({ command }) => {
     },
     optimizeDeps: {
       include: ['react', 'react-dom', 'motion'],
-      force: true, // ensure a fresh optimize after recent import fixes
     },
   }
 })

@@ -1,4 +1,3 @@
-@'
 # dependencies
 node_modules/
 .pnpm-store/
@@ -21,4 +20,3 @@ node_modules/.cache/
 # editor/system
 .vscode/
 .DS_Store
-'@ | Set-Content .gitignore
